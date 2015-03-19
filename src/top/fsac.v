@@ -1,58 +1,59 @@
-//*****************************
-// name: fsac.v
-// module: fsac
-// author: caijun.Li
-// description:
-//
-// date: 2015-03-18
-// version:
-// ****************************
-
-`timescale 1ns/100ps
 module fsac
-	(
-	 clk_50m_sys	, //system clock
-	 rst_chip_n	, //reset
-	 //SPI interface
+(
+	 sys_clk_25m	,
+	 sys_rstn		,
+	 
+	 spi_clk		,
 	 spi_cs_n	,
+ 	 spi_mosi	,
 	 spi_miso	,
-	 spi_mosi	,
-	 spi_clk	,
-
-	 //filter contrl
+	 
+	 spi_out_oe,
+	 spi_rd_data,
+	 spi_wr_data,
+	 spi_reg_addr,
+	 spi_rw,
+	 spi_sel_end,
+	
 	 filter_switch
 
-	);
-
-//--------------------
-// Define parameters
-//-------------------
-//parameter 
-
-
-//--------------------
-// Dclare port Signals
-//-------------------
-//system signal
-input clk_50m_sys	;
-input rst_chip_n	;
-//input
-input spi_miso		;
-input spi_cs_n		;
+);
+input sys_clk_25m ;
+input sys_rstn		;
 input spi_clk		;
+input spi_mosi		;
+input spi_cs_n		;
 
-output spi_mosi		;
-output [7:0]	filter_switch	;
+output spi_miso	;
+
+input	[7:0]	spi_reg_addr	;
+input	[7:0]	spi_wr_data		;
+output[7:0]	spi_rd_data		;
+input			spi_rw			;
+output		spi_out_oe		;
+input			spi_sel_end		;
 
 
-//wrie
+output[7:0]	filter_switch	;
 
-
-//instances
+spi_slave spi_interface(
+// port map - connection between master ports and signals/registers   
+	.sys_clk_25m(sys_clk_25m),
+	.sys_rstn(sys_rstn),
+	.spi_clk(spi_clk),
+	.spi_cs_n(spi_cs_n),
+	.spi_miso(spi_miso),
+	.spi_mosi(spi_mosi),
+	
+	.spi_out_oe(spi_out_oe),
+	.spi_rd_data(spi_rd_data),
+	.spi_wr_data(spi_wr_data),
+	.spi_reg_addr(spi_reg_addr),
+	.spi_rw(spi_rw),
+	.spi_sel_end(spi_sel_end)
+);
 
 
 
 
 endmodule
-
-//`resetall
