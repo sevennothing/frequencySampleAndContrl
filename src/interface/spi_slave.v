@@ -26,6 +26,7 @@ module spi_slave
 	 spi_wr_data	,
 	 spi_rd_data	,
 	 spi_rw			,
+	 spi_data_start	,
 	 spi_sel_end
 	 	  
 	);
@@ -43,6 +44,7 @@ input		[7:0]	spi_rd_data		;
 output			spi_rw			;
 input				spi_out_oe		;
 output			spi_sel_end		;
+output 			spi_data_start	;
 
 //-------------------------
 // Define parmeters
@@ -51,7 +53,8 @@ parameter	UDLY	=2;
 
 reg [2:0]	spi_clk_reg			;
 reg [2:0]	spi_csn_reg			;
-reg [1:0]	spi_mosi_reg		; 
+reg [1:0]	spi_mosi_reg		;
+reg 			spi_miso				;
 reg [2:0]	spi_bitcnt			; // receve bit counter
 reg [7:0]	spi_data_fifo		; // receve fifo register
 reg [7:0]	spi_wr_data			; // data register
@@ -60,6 +63,7 @@ reg [1:0]	spi_data_cnt		; // receved byte counter
 //reg [7:0]	spi_addr_reg		; // command and adress value
 reg [7:0]	spi_reg_addr		; // command and adress value
 reg			spi_rw				;
+reg			spi_data_start		;
 
 //
 // sync SCK to the FPGA clock using a 3-bits shift register
@@ -91,6 +95,10 @@ begin
   begin
 	  spi_bitcnt <= spi_bitcnt + 3'b001;
 	  spi_data_fifo	<= {spi_data_fifo[6:0],spi_mosi};
+	  if(spi_out_oe)
+	    spi_miso <= spi_rd_data[spi_bitcnt];
+	  else
+		 spi_miso <= 0;
   end
 end
 
@@ -126,6 +134,32 @@ begin
   //end
 end
 //assign spi_rw = spi_wr_data[7];
+
+always @(posedge sys_clk_25m)
+begin
+  if(~spi_sel_active)
+	  spi_data_start <= 0;
+  else
+  if(spi_rw)
+  begin
+	  spi_data_start <= 1;
+  end
+  else
+  if (spi_data_cnt ==2'b10)
+  begin
+		spi_data_start <= 1;
+  end
+end
+
+always @(posedge sys_clk_25m)
+begin
+	if(spi_out_oe)
+	begin
+		//output serial
+		
+	end
+end
+
 endmodule
 
 
