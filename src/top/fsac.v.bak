@@ -1,12 +1,3 @@
-//*****************************
-// name: fsac.v
-// module: fsac
-// author: caijun.Li
-// description:
-//
-// date: 2015-03-18
-// version:
-// ****************************
 module fsac
 (
 	 sys_clk_25m	,
@@ -32,7 +23,6 @@ output[7:0]	filter_switch	;
 wire	 spi_out_oe ;
 wire	 spi_rw		;
 wire 	 spi_data_start	;
-wire	 spi_sel_start		;
 wire	 spi_sel_end	;
 wire [7:0]	 spi_rd_data	;
 wire [7:0]	 spi_wr_data	;
@@ -55,7 +45,6 @@ spi_slave spi_interface(
 	.spi_reg_addr(spi_reg_addr),
 	.spi_data_start(spi_data_start),
 	.spi_rw(spi_rw),
-	.spi_sel_start(spi_sel_start),
 	.spi_sel_end(spi_sel_end)
 );
 

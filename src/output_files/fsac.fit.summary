@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat Mar 21 22:49:35 2015
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : fsac
+Top-level Entity Name : fsac
+Family : MAX II
+Device : EPM240T100C3
+Timing Models : Final
+Total logic elements : 62 / 240 ( 26 % )
+Total pins : 14 / 80 ( 18 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

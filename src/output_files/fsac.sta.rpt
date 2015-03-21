@@ -1,0 +1,595 @@
+TimeQuest Timing Analyzer report for fsac
+Sat Mar 21 22:49:42 2015
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'sys_clk_25m'
+ 12. Hold: 'sys_clk_25m'
+ 13. Minimum Pulse Width: 'sys_clk_25m'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Setup Transfers
+ 19. Hold Transfers
+ 20. Report TCCS
+ 21. Report RSKM
+ 22. Unconstrained Paths
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                        ;
++--------------------+-----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Full Version ;
+; Revision Name      ; fsac                                                ;
+; Device Family      ; MAX II                                              ;
+; Device Name        ; EPM240T100C3                                        ;
+; Timing Models      ; Final                                               ;
+; Delay Model        ; Slow Model                                          ;
+; Rise/Fall Delays   ; Unavailable                                         ;
++--------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                   ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; Clock Name  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets         ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; sys_clk_25m ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sys_clk_25m } ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+
+
++---------------------------------------------------+
+; Fmax Summary                                      ;
++------------+-----------------+-------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name  ; Note ;
++------------+-----------------+-------------+------+
+; 176.99 MHz ; 176.99 MHz      ; sys_clk_25m ;      ;
++------------+-----------------+-------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------+
+; Setup Summary                        ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; sys_clk_25m ; -3.770 ; -130.800      ;
++-------------+--------+---------------+
+
+
++-------------------------------------+
+; Hold Summary                        ;
++-------------+-------+---------------+
+; Clock       ; Slack ; End Point TNS ;
++-------------+-------+---------------+
+; sys_clk_25m ; 0.861 ; 0.000         ;
++-------------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------------+
+; Minimum Pulse Width Summary          ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; sys_clk_25m ; -2.289 ; -2.289        ;
++-------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'sys_clk_25m'                                                                                                                                              ;
++--------+-----------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.770 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|reg_rd_data_buf[5]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.562      ;
+; -3.770 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|reg_rd_data_buf[4]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.562      ;
+; -3.770 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|reg_rd_data_buf[1]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.562      ;
+; -3.770 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|reg_rd_data_buf[0]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.562      ;
+; -3.635 ; spi_slave:spi_interface|spi_reg_addr[3] ; reg_interface:reg_if|reg_rd_data_buf[5]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.427      ;
+; -3.635 ; spi_slave:spi_interface|spi_reg_addr[3] ; reg_interface:reg_if|reg_rd_data_buf[4]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.427      ;
+; -3.635 ; spi_slave:spi_interface|spi_reg_addr[3] ; reg_interface:reg_if|reg_rd_data_buf[1]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.427      ;
+; -3.635 ; spi_slave:spi_interface|spi_reg_addr[3] ; reg_interface:reg_if|reg_rd_data_buf[0]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.427      ;
+; -3.424 ; spi_slave:spi_interface|spi_reg_addr[6] ; reg_interface:reg_if|reg_rd_data_buf[5]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.216      ;
+; -3.424 ; spi_slave:spi_interface|spi_reg_addr[6] ; reg_interface:reg_if|reg_rd_data_buf[4]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.216      ;
+; -3.424 ; spi_slave:spi_interface|spi_reg_addr[6] ; reg_interface:reg_if|reg_rd_data_buf[1]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.216      ;
+; -3.424 ; spi_slave:spi_interface|spi_reg_addr[6] ; reg_interface:reg_if|reg_rd_data_buf[0]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.216      ;
+; -3.418 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|reg_rd_data_buf[6]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.210      ;
+; -3.418 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|reg_rd_data_buf[7]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.210      ;
+; -3.418 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|reg_rd_data_buf[2]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.210      ;
+; -3.418 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|reg_rd_data_buf[3]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.210      ;
+; -3.307 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|reg_rd_data_buf[5]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.099      ;
+; -3.307 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|reg_rd_data_buf[4]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.099      ;
+; -3.307 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|reg_rd_data_buf[1]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.099      ;
+; -3.307 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|reg_rd_data_buf[0]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.099      ;
+; -3.283 ; spi_slave:spi_interface|spi_reg_addr[3] ; reg_interface:reg_if|reg_rd_data_buf[6]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.075      ;
+; -3.283 ; spi_slave:spi_interface|spi_reg_addr[3] ; reg_interface:reg_if|reg_rd_data_buf[7]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.075      ;
+; -3.283 ; spi_slave:spi_interface|spi_reg_addr[3] ; reg_interface:reg_if|reg_rd_data_buf[2]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.075      ;
+; -3.283 ; spi_slave:spi_interface|spi_reg_addr[3] ; reg_interface:reg_if|reg_rd_data_buf[3]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 4.075      ;
+; -3.201 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|reg_rd_data_buf[5]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.993      ;
+; -3.201 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|reg_rd_data_buf[4]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.993      ;
+; -3.201 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|reg_rd_data_buf[1]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.993      ;
+; -3.201 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|reg_rd_data_buf[0]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.993      ;
+; -3.123 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_data_fifo[0] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.915      ;
+; -3.123 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_data_fifo[1] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.915      ;
+; -3.123 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_data_fifo[2] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.915      ;
+; -3.123 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_data_fifo[3] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.915      ;
+; -3.123 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_data_fifo[4] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.915      ;
+; -3.123 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_data_fifo[5] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.915      ;
+; -3.123 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_data_fifo[6] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.915      ;
+; -3.123 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_data_fifo[7] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.915      ;
+; -3.122 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.914      ;
+; -3.101 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|reg_rd_data_buf[5]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.893      ;
+; -3.101 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|reg_rd_data_buf[4]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.893      ;
+; -3.101 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|reg_rd_data_buf[1]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.893      ;
+; -3.101 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|reg_rd_data_buf[0]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.893      ;
+; -3.072 ; spi_slave:spi_interface|spi_reg_addr[6] ; reg_interface:reg_if|reg_rd_data_buf[6]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.864      ;
+; -3.072 ; spi_slave:spi_interface|spi_reg_addr[6] ; reg_interface:reg_if|reg_rd_data_buf[7]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.864      ;
+; -3.072 ; spi_slave:spi_interface|spi_reg_addr[6] ; reg_interface:reg_if|reg_rd_data_buf[2]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.864      ;
+; -3.072 ; spi_slave:spi_interface|spi_reg_addr[6] ; reg_interface:reg_if|reg_rd_data_buf[3]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.864      ;
+; -2.955 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|reg_rd_data_buf[6]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.747      ;
+; -2.955 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|reg_rd_data_buf[7]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.747      ;
+; -2.955 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|reg_rd_data_buf[2]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.747      ;
+; -2.955 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|reg_rd_data_buf[3]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.747      ;
+; -2.869 ; spi_slave:spi_interface|spi_reg_addr[4] ; reg_interface:reg_if|reg_rd_data_buf[5]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.661      ;
+; -2.869 ; spi_slave:spi_interface|spi_reg_addr[4] ; reg_interface:reg_if|reg_rd_data_buf[4]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.661      ;
+; -2.869 ; spi_slave:spi_interface|spi_reg_addr[4] ; reg_interface:reg_if|reg_rd_data_buf[1]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.661      ;
+; -2.869 ; spi_slave:spi_interface|spi_reg_addr[4] ; reg_interface:reg_if|reg_rd_data_buf[0]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.661      ;
+; -2.849 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|reg_rd_data_buf[6]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.641      ;
+; -2.849 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|reg_rd_data_buf[7]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.641      ;
+; -2.849 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|reg_rd_data_buf[2]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.641      ;
+; -2.849 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|reg_rd_data_buf[3]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.641      ;
+; -2.822 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|fiter_ctrl[6]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.614      ;
+; -2.822 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|fiter_ctrl[5]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.614      ;
+; -2.822 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|fiter_ctrl[4]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.614      ;
+; -2.822 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|fiter_ctrl[7]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.614      ;
+; -2.822 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|fiter_ctrl[2]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.614      ;
+; -2.822 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|fiter_ctrl[1]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.614      ;
+; -2.822 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|fiter_ctrl[0]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.614      ;
+; -2.822 ; spi_slave:spi_interface|spi_reg_addr[2] ; reg_interface:reg_if|fiter_ctrl[3]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.614      ;
+; -2.800 ; spi_slave:spi_interface|spi_clk_reg[2]  ; spi_slave:spi_interface|spi_data_fifo[0] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.592      ;
+; -2.800 ; spi_slave:spi_interface|spi_clk_reg[2]  ; spi_slave:spi_interface|spi_data_fifo[1] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.592      ;
+; -2.800 ; spi_slave:spi_interface|spi_clk_reg[2]  ; spi_slave:spi_interface|spi_data_fifo[2] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.592      ;
+; -2.800 ; spi_slave:spi_interface|spi_clk_reg[2]  ; spi_slave:spi_interface|spi_data_fifo[3] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.592      ;
+; -2.800 ; spi_slave:spi_interface|spi_clk_reg[2]  ; spi_slave:spi_interface|spi_data_fifo[4] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.592      ;
+; -2.800 ; spi_slave:spi_interface|spi_clk_reg[2]  ; spi_slave:spi_interface|spi_data_fifo[5] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.592      ;
+; -2.800 ; spi_slave:spi_interface|spi_clk_reg[2]  ; spi_slave:spi_interface|spi_data_fifo[6] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.592      ;
+; -2.800 ; spi_slave:spi_interface|spi_clk_reg[2]  ; spi_slave:spi_interface|spi_data_fifo[7] ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.592      ;
+; -2.799 ; spi_slave:spi_interface|spi_clk_reg[2]  ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.591      ;
+; -2.749 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|reg_rd_data_buf[6]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.541      ;
+; -2.749 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|reg_rd_data_buf[7]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.541      ;
+; -2.749 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|reg_rd_data_buf[2]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.541      ;
+; -2.749 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|reg_rd_data_buf[3]  ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.541      ;
+; -2.739 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|fiter_ctrl[6]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.531      ;
+; -2.739 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|fiter_ctrl[5]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.531      ;
+; -2.739 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|fiter_ctrl[4]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.531      ;
+; -2.739 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|fiter_ctrl[7]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.531      ;
+; -2.739 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|fiter_ctrl[2]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.531      ;
+; -2.739 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|fiter_ctrl[1]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.531      ;
+; -2.739 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|fiter_ctrl[0]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.531      ;
+; -2.739 ; spi_slave:spi_interface|spi_reg_addr[5] ; reg_interface:reg_if|fiter_ctrl[3]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.531      ;
+; -2.716 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|fiter_ctrl[6]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.508      ;
+; -2.716 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|fiter_ctrl[5]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.508      ;
+; -2.716 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|fiter_ctrl[4]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.508      ;
+; -2.716 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|fiter_ctrl[7]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.508      ;
+; -2.716 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|fiter_ctrl[2]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.508      ;
+; -2.716 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|fiter_ctrl[1]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.508      ;
+; -2.716 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|fiter_ctrl[0]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.508      ;
+; -2.716 ; spi_slave:spi_interface|spi_reg_addr[0] ; reg_interface:reg_if|fiter_ctrl[3]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.508      ;
+; -2.687 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_bitcnt[1]    ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.479      ;
+; -2.687 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_bitcnt[0]    ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.479      ;
+; -2.687 ; spi_slave:spi_interface|spi_csn_reg[1]  ; spi_slave:spi_interface|spi_bitcnt[2]    ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.479      ;
+; -2.630 ; reg_interface:reg_if|reg_rd_data_buf[0] ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.422      ;
+; -2.616 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|fiter_ctrl[6]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.408      ;
+; -2.616 ; spi_slave:spi_interface|spi_data_start  ; reg_interface:reg_if|fiter_ctrl[5]       ; sys_clk_25m  ; sys_clk_25m ; 1.000        ; 0.000      ; 3.408      ;
++--------+-----------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'sys_clk_25m'                                                                                                                                               ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.861 ; spi_slave:spi_interface|spi_clk_reg[0]   ; spi_slave:spi_interface|spi_clk_reg[1]   ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 0.999      ;
+; 0.866 ; spi_slave:spi_interface|spi_data_fifo[5] ; spi_slave:spi_interface|spi_data_fifo[6] ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.004      ;
+; 0.867 ; spi_slave:spi_interface|spi_data_fifo[6] ; spi_slave:spi_interface|spi_data_fifo[7] ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.005      ;
+; 0.870 ; spi_slave:spi_interface|spi_data_fifo[2] ; spi_slave:spi_interface|spi_data_fifo[3] ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.008      ;
+; 0.870 ; spi_slave:spi_interface|spi_data_fifo[4] ; spi_slave:spi_interface|spi_data_fifo[5] ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.008      ;
+; 1.027 ; spi_slave:spi_interface|spi_data_fifo[0] ; spi_slave:spi_interface|spi_data_fifo[1] ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.165      ;
+; 1.029 ; spi_slave:spi_interface|spi_csn_reg[2]   ; reg_interface:reg_if|reg_out_oe          ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.167      ;
+; 1.031 ; spi_slave:spi_interface|spi_data_fifo[3] ; spi_slave:spi_interface|spi_data_fifo[4] ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.169      ;
+; 1.035 ; spi_slave:spi_interface|spi_data_fifo[1] ; spi_slave:spi_interface|spi_data_fifo[2] ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.173      ;
+; 1.068 ; spi_slave:spi_interface|spi_bitcnt[0]    ; spi_slave:spi_interface|spi_bitcnt[0]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.206      ;
+; 1.075 ; spi_slave:spi_interface|spi_bitcnt[0]    ; spi_slave:spi_interface|spi_bitcnt[1]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.213      ;
+; 1.112 ; spi_slave:spi_interface|spi_clk_reg[1]   ; spi_slave:spi_interface|spi_clk_reg[2]   ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.250      ;
+; 1.204 ; spi_slave:spi_interface|spi_data_start   ; spi_slave:spi_interface|spi_data_start   ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.342      ;
+; 1.208 ; spi_slave:spi_interface|spi_data_start   ; reg_interface:reg_if|reg_out_oe          ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.346      ;
+; 1.341 ; spi_slave:spi_interface|spi_data_cnt[0]  ; spi_slave:spi_interface|spi_data_cnt[0]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.479      ;
+; 1.364 ; spi_slave:spi_interface|spi_bitcnt[0]    ; spi_slave:spi_interface|spi_bitcnt[2]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.502      ;
+; 1.393 ; spi_slave:spi_interface|spi_data_cnt[1]  ; spi_slave:spi_interface|spi_data_cnt[1]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.531      ;
+; 1.394 ; reg_interface:reg_if|reg_out_oe          ; reg_interface:reg_if|reg_out_oe          ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.532      ;
+; 1.428 ; spi_slave:spi_interface|spi_bitcnt[1]    ; spi_slave:spi_interface|spi_bitcnt[1]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.566      ;
+; 1.431 ; spi_slave:spi_interface|spi_bitcnt[1]    ; spi_slave:spi_interface|spi_bitcnt[2]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.569      ;
+; 1.446 ; spi_slave:spi_interface|spi_data_cnt[0]  ; spi_slave:spi_interface|spi_data_cnt[1]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.584      ;
+; 1.451 ; spi_slave:spi_interface|spi_bitcnt[2]    ; spi_slave:spi_interface|spi_bitcnt[2]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.589      ;
+; 1.525 ; spi_slave:spi_interface|spi_csn_reg[0]   ; spi_slave:spi_interface|spi_csn_reg[1]   ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.663      ;
+; 1.558 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_csn_reg[2]   ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.696      ;
+; 1.599 ; spi_slave:spi_interface|spi_data_fifo[1] ; spi_slave:spi_interface|spi_wr_data[1]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.237      ;
+; 1.601 ; spi_slave:spi_interface|spi_data_fifo[7] ; spi_slave:spi_interface|spi_wr_data[7]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.239      ;
+; 1.611 ; spi_slave:spi_interface|spi_data_fifo[6] ; spi_slave:spi_interface|spi_wr_data[6]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.249      ;
+; 1.647 ; spi_slave:spi_interface|spi_bitcnt[2]    ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.785      ;
+; 1.741 ; spi_slave:spi_interface|spi_bitcnt[2]    ; spi_slave:spi_interface|spi_recved_byte  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.879      ;
+; 1.757 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_bitcnt[2]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.895      ;
+; 1.761 ; spi_slave:spi_interface|spi_data_fifo[5] ; spi_slave:spi_interface|spi_wr_data[5]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.399      ;
+; 1.762 ; spi_slave:spi_interface|spi_data_fifo[3] ; spi_slave:spi_interface|spi_wr_data[3]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.400      ;
+; 1.774 ; reg_interface:reg_if|fiter_ctrl[3]       ; reg_interface:reg_if|reg_rd_data_buf[3]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.912      ;
+; 1.776 ; reg_interface:reg_if|fiter_ctrl[2]       ; reg_interface:reg_if|reg_rd_data_buf[2]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.914      ;
+; 1.776 ; spi_slave:spi_interface|spi_data_fifo[4] ; spi_slave:spi_interface|spi_wr_data[4]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.414      ;
+; 1.777 ; spi_slave:spi_interface|spi_data_fifo[2] ; spi_slave:spi_interface|spi_wr_data[2]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.415      ;
+; 1.787 ; reg_interface:reg_if|fiter_ctrl[6]       ; reg_interface:reg_if|reg_rd_data_buf[6]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.925      ;
+; 1.837 ; reg_interface:reg_if|reg_rd_data_buf[7]  ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.975      ;
+; 1.849 ; reg_interface:reg_if|fiter_ctrl[4]       ; reg_interface:reg_if|reg_rd_data_buf[4]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.987      ;
+; 1.852 ; reg_interface:reg_if|fiter_ctrl[7]       ; reg_interface:reg_if|reg_rd_data_buf[7]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 1.990      ;
+; 1.892 ; reg_interface:reg_if|fiter_ctrl[5]       ; reg_interface:reg_if|reg_rd_data_buf[5]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.030      ;
+; 1.908 ; spi_slave:spi_interface|spi_rw           ; spi_slave:spi_interface|spi_data_start   ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.046      ;
+; 1.911 ; spi_slave:spi_interface|spi_rw           ; reg_interface:reg_if|reg_out_oe          ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.049      ;
+; 1.940 ; spi_slave:spi_interface|spi_data_fifo[0] ; spi_slave:spi_interface|spi_wr_data[0]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.578      ;
+; 1.995 ; reg_interface:reg_if|fiter_ctrl[0]       ; reg_interface:reg_if|reg_rd_data_buf[0]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.133      ;
+; 2.039 ; spi_slave:spi_interface|spi_wr_data[5]   ; spi_slave:spi_interface|spi_reg_addr[5]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.677      ;
+; 2.048 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_bitcnt[0]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.186      ;
+; 2.048 ; reg_interface:reg_if|reg_rd_data_buf[6]  ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.186      ;
+; 2.057 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_bitcnt[1]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.195      ;
+; 2.071 ; spi_slave:spi_interface|spi_wr_data[3]   ; spi_slave:spi_interface|spi_reg_addr[3]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.709      ;
+; 2.101 ; spi_slave:spi_interface|spi_bitcnt[1]    ; spi_slave:spi_interface|spi_recved_byte  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.239      ;
+; 2.106 ; reg_interface:reg_if|reg_rd_data_buf[2]  ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.244      ;
+; 2.106 ; spi_slave:spi_interface|spi_clk_reg[1]   ; spi_slave:spi_interface|spi_recved_byte  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.244      ;
+; 2.110 ; spi_slave:spi_interface|spi_wr_data[1]   ; spi_slave:spi_interface|spi_reg_addr[1]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.748      ;
+; 2.114 ; spi_slave:spi_interface|spi_wr_data[7]   ; spi_slave:spi_interface|spi_rw           ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.752      ;
+; 2.115 ; spi_slave:spi_interface|spi_csn_reg[1]   ; reg_interface:reg_if|reg_out_oe          ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.253      ;
+; 2.164 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_data_start   ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.302      ;
+; 2.166 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_wr_data[6]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.804      ;
+; 2.166 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_wr_data[5]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.804      ;
+; 2.166 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_wr_data[4]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.804      ;
+; 2.166 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_wr_data[7]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.804      ;
+; 2.166 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_wr_data[2]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.804      ;
+; 2.166 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_wr_data[1]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.804      ;
+; 2.166 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_wr_data[0]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.804      ;
+; 2.166 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_wr_data[3]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.804      ;
+; 2.176 ; spi_slave:spi_interface|spi_bitcnt[0]    ; spi_slave:spi_interface|spi_recved_byte  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.314      ;
+; 2.181 ; spi_slave:spi_interface|spi_wr_data[0]   ; spi_slave:spi_interface|spi_reg_addr[0]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.819      ;
+; 2.181 ; spi_slave:spi_interface|spi_wr_data[2]   ; spi_slave:spi_interface|spi_reg_addr[2]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.819      ;
+; 2.186 ; reg_interface:reg_if|fiter_ctrl[1]       ; reg_interface:reg_if|reg_rd_data_buf[1]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.324      ;
+; 2.188 ; spi_slave:spi_interface|spi_wr_data[6]   ; spi_slave:spi_interface|spi_reg_addr[6]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.826      ;
+; 2.189 ; spi_slave:spi_interface|spi_wr_data[6]   ; reg_interface:reg_if|fiter_ctrl[6]       ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.827      ;
+; 2.212 ; reg_interface:reg_if|reg_rd_data_buf[3]  ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.350      ;
+; 2.250 ; spi_slave:spi_interface|spi_clk_reg[2]   ; spi_slave:spi_interface|spi_bitcnt[1]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.388      ;
+; 2.250 ; spi_slave:spi_interface|spi_clk_reg[2]   ; spi_slave:spi_interface|spi_bitcnt[0]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.388      ;
+; 2.250 ; spi_slave:spi_interface|spi_clk_reg[2]   ; spi_slave:spi_interface|spi_bitcnt[2]    ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.388      ;
+; 2.257 ; spi_slave:spi_interface|spi_wr_data[7]   ; reg_interface:reg_if|fiter_ctrl[7]       ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.895      ;
+; 2.259 ; spi_slave:spi_interface|spi_rw           ; reg_interface:reg_if|reg_rd_data_buf[6]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.397      ;
+; 2.259 ; spi_slave:spi_interface|spi_rw           ; reg_interface:reg_if|reg_rd_data_buf[7]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.397      ;
+; 2.259 ; spi_slave:spi_interface|spi_rw           ; reg_interface:reg_if|reg_rd_data_buf[2]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.397      ;
+; 2.259 ; spi_slave:spi_interface|spi_rw           ; reg_interface:reg_if|reg_rd_data_buf[3]  ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.397      ;
+; 2.265 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_data_cnt[1]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.903      ;
+; 2.273 ; spi_slave:spi_interface|spi_wr_data[1]   ; reg_interface:reg_if|fiter_ctrl[1]       ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.911      ;
+; 2.273 ; spi_slave:spi_interface|spi_csn_reg[1]   ; spi_slave:spi_interface|spi_data_cnt[0]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.911      ;
+; 2.304 ; spi_slave:spi_interface|spi_data_cnt[0]  ; spi_slave:spi_interface|spi_data_start   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.942      ;
+; 2.331 ; spi_slave:spi_interface|spi_bitcnt[1]    ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.469      ;
+; 2.344 ; spi_slave:spi_interface|spi_wr_data[2]   ; reg_interface:reg_if|fiter_ctrl[2]       ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.982      ;
+; 2.348 ; spi_slave:spi_interface|spi_wr_data[5]   ; reg_interface:reg_if|fiter_ctrl[5]       ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.986      ;
+; 2.357 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_data_cnt[0]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 1.995      ;
+; 2.360 ; reg_interface:reg_if|reg_out_oe          ; spi_slave:spi_interface|spi_miso         ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.498      ;
+; 2.470 ; spi_slave:spi_interface|spi_data_cnt[1]  ; spi_slave:spi_interface|spi_data_start   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.108      ;
+; 2.474 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_data_cnt[1]  ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.112      ;
+; 2.487 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_wr_data[6]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.125      ;
+; 2.487 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_wr_data[5]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.125      ;
+; 2.487 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_wr_data[4]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.125      ;
+; 2.487 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_wr_data[7]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.125      ;
+; 2.487 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_wr_data[2]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.125      ;
+; 2.487 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_wr_data[1]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.125      ;
+; 2.487 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_wr_data[0]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.125      ;
+; 2.487 ; spi_slave:spi_interface|spi_recved_byte  ; spi_slave:spi_interface|spi_wr_data[3]   ; sys_clk_25m  ; sys_clk_25m ; -0.500       ; 0.000      ; 2.125      ;
+; 2.492 ; spi_slave:spi_interface|spi_reg_addr[4]  ; reg_interface:reg_if|fiter_ctrl[6]       ; sys_clk_25m  ; sys_clk_25m ; 0.000        ; 0.000      ; 2.630      ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'sys_clk_25m'                                                                                              ;
++--------+--------------+----------------+------------------+-------------+------------+------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                                   ;
++--------+--------------+----------------+------------------+-------------+------------+------------------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; sys_clk_25m ; Rise       ; sys_clk_25m                              ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[0]       ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[0]       ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[1]       ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[1]       ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[2]       ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[2]       ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[3]       ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[3]       ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[4]       ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[4]       ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[5]       ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[5]       ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[6]       ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[6]       ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[7]       ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|fiter_ctrl[7]       ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_out_oe          ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_out_oe          ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[0]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[0]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[1]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[1]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[2]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[2]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[3]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[3]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[4]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[4]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[5]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[5]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[6]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[6]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[7]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; reg_interface:reg_if|reg_rd_data_buf[7]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_bitcnt[0]    ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_bitcnt[0]    ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_bitcnt[1]    ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_bitcnt[1]    ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_bitcnt[2]    ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_bitcnt[2]    ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_clk_reg[0]   ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_clk_reg[0]   ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_clk_reg[1]   ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_clk_reg[1]   ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_clk_reg[2]   ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_clk_reg[2]   ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_csn_reg[0]   ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_csn_reg[0]   ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_csn_reg[1]   ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_csn_reg[1]   ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_csn_reg[2]   ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_csn_reg[2]   ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Fall       ; spi_slave:spi_interface|spi_data_cnt[0]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Fall       ; spi_slave:spi_interface|spi_data_cnt[0]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Fall       ; spi_slave:spi_interface|spi_data_cnt[1]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Fall       ; spi_slave:spi_interface|spi_data_cnt[1]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[0] ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[0] ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[1] ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[1] ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[2] ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[2] ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[3] ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[3] ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[4] ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[4] ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[5] ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[5] ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[6] ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[6] ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[7] ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_fifo[7] ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_start   ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_data_start   ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_miso         ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_miso         ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_recved_byte  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_recved_byte  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[0]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[0]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[1]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[1]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[2]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[2]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[3]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[3]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[4]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[4]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[5]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[5]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[6]  ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_reg_addr[6]  ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_rw           ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Rise       ; spi_slave:spi_interface|spi_rw           ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Fall       ; spi_slave:spi_interface|spi_wr_data[0]   ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Fall       ; spi_slave:spi_interface|spi_wr_data[0]   ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Fall       ; spi_slave:spi_interface|spi_wr_data[1]   ;
+; 0.334  ; 0.500        ; 0.166          ; Low Pulse Width  ; sys_clk_25m ; Fall       ; spi_slave:spi_interface|spi_wr_data[1]   ;
+; 0.334  ; 0.500        ; 0.166          ; High Pulse Width ; sys_clk_25m ; Fall       ; spi_slave:spi_interface|spi_wr_data[2]   ;
++--------+--------------+----------------+------------------+-------------+------------+------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++-----------+-------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-------------+-------+-------+------------+-----------------+
+; spi_clk   ; sys_clk_25m ; 1.477 ; 1.477 ; Rise       ; sys_clk_25m     ;
+; spi_cs_n  ; sys_clk_25m ; 1.523 ; 1.523 ; Rise       ; sys_clk_25m     ;
+; spi_mosi  ; sys_clk_25m ; 1.657 ; 1.657 ; Rise       ; sys_clk_25m     ;
+; sys_rstn  ; sys_clk_25m ; 4.255 ; 4.255 ; Rise       ; sys_clk_25m     ;
++-----------+-------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++-----------+-------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-------------+--------+--------+------------+-----------------+
+; spi_clk   ; sys_clk_25m ; -1.131 ; -1.131 ; Rise       ; sys_clk_25m     ;
+; spi_cs_n  ; sys_clk_25m ; -1.177 ; -1.177 ; Rise       ; sys_clk_25m     ;
+; spi_mosi  ; sys_clk_25m ; -1.311 ; -1.311 ; Rise       ; sys_clk_25m     ;
+; sys_rstn  ; sys_clk_25m ; -1.623 ; -1.623 ; Rise       ; sys_clk_25m     ;
++-----------+-------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++-----------+-------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-------------+-------+-------+------------+-----------------+
+; spi_miso  ; sys_clk_25m ; 4.262 ; 4.262 ; Rise       ; sys_clk_25m     ;
++-----------+-------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++-----------+-------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-------------+-------+-------+------------+-----------------+
+; spi_miso  ; sys_clk_25m ; 4.262 ; 4.262 ; Rise       ; sys_clk_25m     ;
++-----------+-------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; sys_clk_25m ; sys_clk_25m ; 238      ; 34       ; 28       ; 3        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; sys_clk_25m ; sys_clk_25m ; 238      ; 34       ; 28       ; 3        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 20    ; 20   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+    Info: Processing started: Sat Mar 21 22:49:41 2015
+Info: Command: quartus_sta fsac -c fsac
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'fsac.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name sys_clk_25m sys_clk_25m
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.770
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.770            -130.800 sys_clk_25m 
+Info (332146): Worst-case hold slack is 0.861
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.861               0.000 sys_clk_25m 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 sys_clk_25m 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 644 megabytes
+    Info: Processing ended: Sat Mar 21 22:49:42 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

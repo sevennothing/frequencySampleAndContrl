@@ -27,7 +27,6 @@ module spi_slave
 	 spi_rd_data	,
 	 spi_rw			,
 	 spi_data_start	,
-	 spi_sel_start	,
 	 spi_sel_end
 	 	  
 	);
@@ -46,7 +45,6 @@ output			spi_rw			;
 input				spi_out_oe		;
 output			spi_sel_end		;
 output 			spi_data_start	;
-output			spi_sel_start	;
 
 //-------------------------
 // Define parmeters
